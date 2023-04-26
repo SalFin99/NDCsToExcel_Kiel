@@ -6,7 +6,7 @@ data = JSON_cleaner.cleanJSON()
 # Loop through each country in the data
 for country, country_data in data.items():
     # Create a new pandas DataFrame to hold the data
-    df = pd.DataFrame(columns=['Country', 'Category', 'Classification'])
+    df = pd.DataFrame(columns=['NDC', 'Level'])
 
     # Loop through each category in the country
     for category, category_data in country_data.items():
@@ -18,11 +18,10 @@ for country, country_data in data.items():
 
         if(classification_id>1):
             # Add the data to the DataFrame
-            print(country)
-            df = pd.concat([df, pd.DataFrame({'Country': [country], 'Category': [category_name], 'Classification': [classification_id]})])
+            df = pd.concat([df, pd.DataFrame({'NDC': [category_name], 'Level': [classification_id]})])
 
     country_name = country.replace(' ', '_')
-    with pd.ExcelWriter('states/' + country_name + '.xlsx') as writer:
+    with pd.ExcelWriter('baseExcel/' + country_name + '.xlsx') as writer:
         df.to_excel(writer, index=False)
 
 
