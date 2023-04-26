@@ -13,3 +13,16 @@ The used json file has been already cleaned up by the metadata about authors, co
 
 Main.py just returns all the excel in the following format:
 
+NDC	                       Level
+costs of ccm	               4
+renewable energy	           3
+energy efficiency            3
+transport	                   3
+agriculture	                 2
+land use and forestry	       3
+waste	                       3
+reducing non co2 gases	     2
+fossil fuel subsidiaries	   2
+![image](https://user-images.githubusercontent.com/103948003/234531133-56d722b5-1df3-42ce-8136-98ca27405db4.png)
+
+
