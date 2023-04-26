@@ -14,14 +14,13 @@ for country, country_data in data.items():
         category_name = category.replace('_', ' ')
         # Get the classification ID and details
         classification_id = category_data['classification']['id']
-        classification_details = category_data['classification']['details']
 
         if(classification_id>1):
             # Add the data to the DataFrame
             df = pd.concat([df, pd.DataFrame({'NDC': [category_name], 'Level': [classification_id]})])
 
     country_name = country.replace(' ', '_')
-    with pd.ExcelWriter('baseExcel/' + country_name + '.xlsx') as writer:
+    with pd.ExcelWriter('baseExcels/' + country_name + '.xlsx') as writer:
         df.to_excel(writer, index=False)
 
 
