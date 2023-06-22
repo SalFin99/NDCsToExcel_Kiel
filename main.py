@@ -1,8 +1,14 @@
 import pandas as pd
 import JSON_cleaner
+import loadData
 
-data = JSON_cleaner.cleanJSON()
+dataOLD = JSON_cleaner.cleanJSON_old()
+loadData.loadData(dataOLD)
 
+dataNew = JSON_cleaner.cleanJSON_new()
+loadData.loadDataNEWndc(dataNew)
+
+"""
 # Loop through each country in the data
 for country, country_data in data.items():
     # Create a new pandas DataFrame to hold the data
@@ -16,11 +22,12 @@ for country, country_data in data.items():
         classification_id = category_data['classification']['id']
 
         if(classification_id>1):
-            # Add the data to the DataFrame
             df = pd.concat([df, pd.DataFrame({'NDC': [category_name], 'Level': [classification_id]})])
 
     country_name = country.replace(' ', '_')
     with pd.ExcelWriter('baseExcels/' + country_name + '.xlsx') as writer:
         df.to_excel(writer, index=False)
+
+"""
 
 
