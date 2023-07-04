@@ -3,8 +3,8 @@ import pandas as pd
 
 def merge_excel_files():
     # Get a list of files in each folder
-    files1 = os.listdir('baseExcels')
-    files2 = os.listdir('baseExcelsNEW')
+    files1 = os.listdir('baseExcels') #baseExcels is the folder where loadData.py creates all the excel files. first you have to create this folder.
+    files2 = os.listdir('baseExcelsNEW') #(first you have to create this folder.)
 
     # Find the common filenames
     common_files = set(files1) & set(files2)
