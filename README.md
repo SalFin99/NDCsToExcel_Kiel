@@ -7,6 +7,9 @@ for every country in it.
   
 The json files have been already cleaned up by the metadata about authors, contributors, what NDCs are, the description of the various categories of climate targets etc...
 Basically the json files start like this:
+
+
+
 {
         "AFG": {
             "country_name": "Afghanistan",
